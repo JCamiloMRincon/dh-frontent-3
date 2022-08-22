@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clase 2</title>
+</head>
+
+<body>
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script 
+        src="https://unpkg.com/babel-standalone@6/babel.min.js"
+    ></script>
+
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+
+        var listRenderStock =[]; 
+        var listRenderNoStock =[]; 
+        var listaProductos = [ 
+            { 
+                'name' : 'Manzanas', 
+                'stock' : true 
+            }, 
+            { 
+                'name' : 'Peras', 
+                'stock' : true 
+            }, 
+            { 
+                'name' : 'Naranjas',
+                'stock' : true 
+            },
+            { 
+                'name' : 'Bananas', 
+                'stock' : true 
+            }, 
+            { 
+                'name' : 'Kiwis',
+                'stock' : true 
+            },
+            { 
+                'name' : 'Duraznos',
+                'stock' : false 
+            },
+            { 
+                'name' : 'Cerezas', 
+                'stock' : false 
+            }, 
+            { 
+                'name' : 'Ananas',
+                'stock' : false 
+            } 
+        ];
+
+        for (var i = 0, max = listaProductos.length; i < max; i++) {
+            if(listaProductos[i].stock) { 
+                listRenderStock.push(
+                    <li>{listaProductos[i].name}</li>
+                ); 
+            } else { 
+                listRenderNoStock.push(
+                    <li>{listaProductos[i].name}</li>
+                ); 
+            } 
+        }
+
+        const lista =
+            (<div>
+                <h2>Lista de Productos en stock:</h2>
+                <ul>
+                    {listRenderStock}
+                </ul>
+                <h2>Productos en falta:</h2>
+                <ul>
+                    {listRenderNoStock}
+                </ul>
+            </div>);
+
+        ReactDOM.render(lista, document.getElementById("root"));
+    </script>
+    
+</body>
+
+</html>

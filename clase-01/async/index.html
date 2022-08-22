@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Asincrónico clase 1</title>
+    </head>
+
+    <body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+
+    <div id="root">
+
+    </div>   
+
+    <script type="text/javascript">
+
+        const title = React.createElement('h2', null, '¡Hola!');
+        const world = React.createElement('span', null, ' Mundo ');
+        const hello = React.createElement('p', null, [' Hola ', world]);
+
+        const parentDiv = React.createElement('div', null, [title, hello]);
+
+        ReactDOM.render(parentDiv, document.getElementById("root"));
+
+    </script>
+    </body>
+</html>

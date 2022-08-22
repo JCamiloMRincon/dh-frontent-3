@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clase 3</title>
+</head>
+
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        
+        const list = [
+            "Hamburguesa",
+            "Pizza",
+            "Salchipapa",
+            "Empanada"
+        ];
+
+        const missing = [
+            "Gaseosas",
+            "Agua",
+            "Vino",
+            "Cerveza"
+        ];
+
+        function ShowProducts(props) {
+
+            const elements = props.list.map((listElement) =>
+                <li>{listElement}</li>
+            );
+
+            const tree = 
+                <div>
+                    <h2>Lista de {props.title}</h2>
+                    <ul>
+                        {elements}
+                    </ul>
+                </div>;
+                        
+            return tree;
+        }
+
+        ReactDOM.render(
+            <div>
+                <ShowProducts list = {list} title = "Productos" />
+                <ShowProducts list = {missing} title = "Faltantes" />
+            </div>, 
+            document.getElementById("root")
+        );
+
+    </script>
+</body>
+
+</html>
