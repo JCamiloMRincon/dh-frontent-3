@@ -15,7 +15,27 @@ const CharacterDetail = () => {
 
 
   return (
-    <h2 className={styles.name}>{character.name}</h2>
+    <div>
+      <h2 className={styles.name}>{character.name}</h2>
+      <div style={{
+        display: "flex",
+        justifyContent: "space-around",
+      }}>
+        <img className={styles.image} src={character.image} alt=''/>
+        <div style={{
+          color: "white",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+        }}>
+          <p>Status: {character.status}</p>
+          <p>Species: {character.species}</p>
+          <p>Location: {character.location.name}</p>
+        </div>
+      </div>
+      
+    </div>
+
   )
 }
 export default CharacterDetail;
